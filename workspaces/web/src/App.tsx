@@ -1,11 +1,11 @@
 import React from 'react';
 import './App.css';
-import {Contacto, Phone} from "@monorepo/common";
+import {Contact, Phone} from "@monorepo/common";
 import {createValidator} from "class-validator-formik";
 import {validate} from "class-validator";
 import {ErrorMessage, Field, FieldArray, Form, Formik} from "formik";
 
-let contactoDefaultValues = new Contacto();
+let contactoDefaultValues = new Contact();
 contactoDefaultValues.subject = 'jsjsjsjsjsss';
 contactoDefaultValues.email = 'mi@mail.com';
 
@@ -23,7 +23,7 @@ function App() {
 
                 <Formik
                     initialValues={contactoDefaultValues}
-                    validate={createValidator(Contacto)}
+                    validate={createValidator(Contact)}
                     onSubmit={d => {
                         console.log(typeof d)
                         validate(d).then(errors => console.log(errors))

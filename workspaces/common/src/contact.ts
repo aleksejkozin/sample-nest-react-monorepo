@@ -1,7 +1,7 @@
 import {IsEmail, Length, ValidateNested} from "class-validator";
-// import {Phone} from "./phone";
+import {Phone} from "./phone";
 
-export class Contacto {
+export class Contact {
     @Length(10, 20)
     subject: string;
 
@@ -10,7 +10,7 @@ export class Contacto {
     })
     email?: string;
 
-    // @ValidateNested()
-    // phones: Phone[]
+    @ValidateNested()
+    phones: Phone[]
 
 }

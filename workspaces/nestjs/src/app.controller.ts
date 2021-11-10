@@ -1,6 +1,6 @@
 import { Controller, Get } from '@nestjs/common';
 import { AppService } from './app.service';
-import {Contacto, Secondinterface, User} from "@monorepo/common";
+import {Contact, User} from "@monorepo/common";
 
 
 
@@ -12,7 +12,6 @@ export class AppController {
   getUser2():User {
 
     const user: User = {
-      campo: "",
       email: "asd", firstName: "asd", lastName: "asd", profilePic: "asdasd"
 
     }
@@ -20,23 +19,13 @@ export class AppController {
     return user;
   }
 
-  @Get('dos')
-  getUser4():Secondinterface {
 
-    const prueba: Secondinterface = {
-      otraCosa: false, unapropiedad: ""
+  @Get('contact')
+  getContacto():Contact {
 
-    }
-
-    return prueba;
-  }
-
-  @Get('contacto')
-  getContacto():Contacto {
-
-    const c:Contacto = {
-      subject: "asdas"
-
+    const c:Contact = {
+      subject: "asdas",
+      phones: []
     }
 
     return c;
