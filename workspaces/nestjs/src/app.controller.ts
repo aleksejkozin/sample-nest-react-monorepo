@@ -1,25 +1,44 @@
 import { Controller, Get } from '@nestjs/common';
 import { AppService } from './app.service';
+import {Contacto, Secondinterface, User} from "@monorepo/common";
 
-/**
- * @requires Common
- */
-import { User } from '@monorepo/common';
+
 
 @Controller()
 export class AppController {
   constructor(private readonly appService: AppService) {}
 
   @Get()
-  getUser(): User {
+  getUser2():User {
 
     const user: User = {
-      email: 'nick@master-class.io',
-      profilePic: 'https://avataaars.io/?avatarStyle=Circle&topType=ShortHairShaggyMullet&accessoriesType=Prescription01&hairColor=Auburn&facialHairType=MoustacheMagnum&facialHairColor=Black&clotheType=BlazerSweater&eyeType=Side&eyebrowType=RaisedExcited&mouthType=Disbelief&skinColor=Brown',
-      firstName: 'Nick',
-      lastName: 'Mitchell'
+      campo: "",
+      email: "asd", firstName: "asd", lastName: "asd", profilePic: "asdasd"
+
     }
 
     return user;
+  }
+
+  @Get('dos')
+  getUser4():Secondinterface {
+
+    const prueba: Secondinterface = {
+      otraCosa: false, unapropiedad: ""
+
+    }
+
+    return prueba;
+  }
+
+  @Get('contacto')
+  getContacto():Contacto {
+
+    const c:Contacto = {
+      subject: "asdas"
+
+    }
+
+    return c;
   }
 }

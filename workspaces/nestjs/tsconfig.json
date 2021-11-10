@@ -9,7 +9,11 @@
     "sourceMap": true,
     "outDir": "./dist",
     "baseUrl": "./",
-    "incremental": true
+    "incremental": true,
+    "skipLibCheck": true,
+    "paths" : {
+      "@monorepo/common/*": ["workspaces/common/src/*"]
+    }
   },
   "exclude": ["node_modules", "dist"]
 }

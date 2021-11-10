@@ -1,8 +1,8 @@
 {
   "name": "@monorepo/root",
-  "private": true, 
+  "private": true,
   "version": "1.0.0",
-  "description": "A monorepo for React and NestJs",
+  "description": "sample description",
   "main": "index.js",
   "workspaces": {
     "packages": [
@@ -11,10 +11,11 @@
   },
   "scripts": {
     "test": "echo \"todo\"",
-    "build:app": "yarn workspace @monorepo/react build",
+    "build:app": "yarn workspace @monorepo/web build",
     "build:api": "yarn workspace @monorepo/nestjs build",
     "start:app": "yarn workspace @monorepo/react start",
-    "start:api": "yarn workspace @monorepo/nestjs start"
+    "start:api": "yarn workspace @monorepo/nestjs start",
+    "reinstallDependencies": "find . -name \"node_modules\" -type d -exec rm -rf {} \\; && find . -name \"yarn.lock\" -type f -delete"
   },
   "keywords": [
     "nestjs",
